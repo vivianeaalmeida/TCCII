@@ -1,37 +1,89 @@
-.main{
-    height: 100%;
+:root{
+    --dark-green: #8DB2A5;
 }
 
+.main{
+    background-color: #FBFAF4;
+    border-radius: 2rem;
+    
+}
+
+.home-wrapper{
+    display: flex;
+    
+}
 .overview{
-    margin: 2rem;
     display: flex;
     flex-direction: column;
-    background-color: bisque;
-    height: 100%;
+    flex: 3;
     
 }
 
 .welcome{
-    margin-bottom: auto;
+    margin: 4rem;
+}
+
+.welcome h1, h4{
+    font-family: 'Jost', sans-serif;
 }
 
 .menu-options{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 3rem;
-    grid-row-gap: 5rem;
+    grid-column-gap: 1rem;
+    grid-row-gap: 4rem;
     margin: 2rem;
     padding: 2rem;
-    justify-self: flex-end;
+    
 }
 
 .options{
     //grid-area: 1  1  3  4;
-    background-color: aquamarine;
+    background-color: #8db2a5;
     width: 5rem;
     height: 5rem;
     padding: 2rem;
     text-align: center;
     border-radius: 2rem;
+    
+}
+
+.profile{
+    background-color: #C3E9DC;
+    text-align: center;
+    justify-content: center;
+    width: 25rem;
+    border-radius: 0 2rem 2rem 0;
+    flex: 1;
+}
+
+.profile-pic{
+    width: 10rem;
+    margin: 2rem;
+}
+
+.line{
+    height: 1px;
+    background: black;
+    width: 16rem;
+    margin: 2rem 5rem;  //preciso trocar, nao eh p ser margin
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.notifications{
+    height: 4rem;
+    background: #3C652F;
+    opacity: 0.2;
+    margin: 2rem 4rem;  //preciso trocar, nao eh p ser margin
+    border-radius: 1rem;
+}
+
+//HOVER
+
+.options:hover{
+    background-color: #67ba9d;
 }
