@@ -8,6 +8,11 @@
     
 }
 
+a, mat-icon{
+    text-decoration: none;
+    color: #5c8a7a;
+}
+
 .main-menu{
     display: flex;
     flex-direction: column;
@@ -16,6 +21,15 @@
 
 .system-title h2{
     text-transform: uppercase;
+    color: #5c8a7a;
+    font-family: 'Gluten', cursive;
+    font-weight: 500;
+    font-size: 1.7rem;
+
+}
+
+.logo-icon mat-icon{
+    font-size: 20px;
 }
 
 .system-title, .item-menu, .logout{
