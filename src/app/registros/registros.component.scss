@@ -1,0 +1,56 @@
+.title{
+    display: flex;
+    justify-content: right;
+    padding: 2rem;
+}
+
+.main-list{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.close{
+    display: flex;
+    justify-content: space-between;
+    width: 40rem;
+    background-color: aquamarine;
+    //margin?
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.close h2{
+    margin: 0 2rem;
+}
+
+.drop-button-clicked{
+    display: flex;
+    justify-content: space-between;
+    width: 40rem;
+    background-color: aquamarine;
+    //margin: 2rem;
+    padding: 0.5rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.drop-button-clicked h2{
+    margin: 0 2rem;
+}
+
+.opened-area{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.text-area-wrapper{
+    background-color: lightgray;
+    border-radius: 0 0 1rem 1rem;
+    width: 100%;
+    padding: 1rem 0;
+    outline: none;
+}
+
+
+
