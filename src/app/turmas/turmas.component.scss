@@ -1,0 +1,49 @@
+.title{
+    display: flex;
+    justify-content: right;
+    padding: 2rem;
+    color: #3C652F;
+}
+
+.title h1{
+    padding: 0.5rem;
+}
+
+.list{
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 45px 30px; 
+    justify-items: center;
+    //align-items: center;
+    margin: 0.5rem 2rem;
+    
+}
+
+.turma-color-one, .turma-color-two{
+    width: 13rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.turma-color-one{
+    background-color: rgba(172, 169, 187, 0.7);
+}
+
+.turma-color-two{
+    background-color: rgba(108, 105, 92, 0.5);
+}
+
+
+//hover
+
+.turma-color-one:hover{
+    background-color: rgba(172, 169, 187);
+}
+
+.turma-color-two:hover{
+    background-color: rgba(108, 105, 92, 0.8);
+}

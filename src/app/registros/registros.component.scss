@@ -2,6 +2,7 @@
     display: flex;
     justify-content: right;
     padding: 2rem;
+    color: #3C652F;
 }
 
 .main-list{
@@ -14,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     width: 40rem;
-    background-color: aquamarine;
+    background-color: rgba(60, 101, 47, 0.5);
     //margin?
     padding: 0.5rem;
     border-radius: 1rem;
@@ -28,7 +29,7 @@
     display: flex;
     justify-content: space-between;
     width: 40rem;
-    background-color: aquamarine;
+    background-color: rgba(60, 101, 47, 0.8);
     //margin: 2rem;
     padding: 0.5rem;
     border-radius: 1rem 1rem 0 0;

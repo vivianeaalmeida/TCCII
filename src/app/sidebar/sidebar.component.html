@@ -1,11 +1,12 @@
 <div class="sidebar">
 
-
     <div class="geral">
-        <div class="system-title">
-            <mat-icon class="logo-icon">supervised_user_circle</mat-icon>
-            <h2>Pequenos Passos</h2>
-        </div>
+        <a routerLink="/home">
+            <div class="system-title">
+                <mat-icon class="logo-icon">supervised_user_circle</mat-icon>
+                <h2>Pequenos Passos</h2>
+            </div>
+        </a>
 
         <div class="main-menu">
             <a routerLink="/home">
@@ -14,22 +15,34 @@
                     <h4>Overview</h4>
                 </div>
             </a>
-            <div class="item-menu">
-                <mat-icon>edit</mat-icon>
-                <h4><a routerLink="/registros">Registros</a></h4>
-            </div>
-            <div class="item-menu">
-                <mat-icon>stars</mat-icon>
-                <h4><a routerLink="/turmas">Turmas</a></h4>
-            </div>
-            <div class="item-menu">
-                <mat-icon> email</mat-icon>
-                <h4><a routerLink="/mensagens">Mensagens</a></h4>
-            </div>
-            <div class="item-menu">
-                <mat-icon>settings</mat-icon>
-                <h4><a routerLink="/configuracoes">Configurações</a></h4>
-            </div>
+
+            <a routerLink="/registros">
+                <div class="item-menu">
+                    <mat-icon>edit</mat-icon>
+                    <h4>Registros</h4>
+                </div>
+            </a>
+
+            <a routerLink="/turmas">
+                <div class="item-menu">
+                    <mat-icon>stars</mat-icon>
+                    <h4>Turmas</h4>
+                </div>
+            </a>
+
+            <a routerLink="/mensagens">
+                <div class="item-menu">
+                    <mat-icon> email</mat-icon>
+                    <h4>Mensagens</h4>
+                </div>
+            </a>
+            
+            <a routerLink="/configuracoes">
+                <div class="item-menu">
+                    <mat-icon>settings</mat-icon>
+                    <h4>Configurações</h4>
+                </div>
+            </a>
         </div>
     </div>
 

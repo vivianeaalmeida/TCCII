@@ -26,4 +26,21 @@ export class RegistrosComponent {
   clickAtividades(){
     this.isAtividadesOpened = !this.isAtividadesOpened;
   }
+
+  //funcao saude 
+  isSaudeOpened:boolean = false;
+
+  clickSaude(){
+    this.isSaudeOpened = !this.isSaudeOpened;
+  }
+
+  //funcao incidentes
+  isIncidentesOpened:boolean = false;
+
+  clickIncidentes(){
+    this.isIncidentesOpened = !this.isIncidentesOpened;
+  } 
+
+
+
 }

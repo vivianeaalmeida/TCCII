@@ -45,7 +45,6 @@
 </div>
 
 <!--atividades-->
-
 <div class="main-list">
     <a (click)="clickAtividades()" *ngIf="!isAtividadesOpened" class="drop-button">
         <div class="close">
@@ -62,6 +61,46 @@
         </a>
         <div class="text-area-wrapper" contenteditable="true">
            
+        </div>
+    </div>
+</div>
+
+<!--saude -->
+<div class="main-list">
+    <a (click)="clickSaude()" *ngIf="!isSaudeOpened" class="drop-button">
+        <div class="close">
+            <h2>Saúde</h2>
+            <mat-icon>keyboard_arrow_down</mat-icon>
+        </div>
+    </a>
+    
+
+    <div class="opened-area" *ngIf="isSaudeOpened">
+        <a (click)="clickSaude()" class="drop-button-clicked">
+            <h2>Saúde</h2>
+            <mat-icon>keyboard_arrow_up</mat-icon>
+        </a>
+        <div class="text-area-wrapper" contenteditable="true">
+        </div>
+    </div>
+</div>
+
+<!-- Incidentes -->
+<div class="main-list">
+    <a (click)="clickIncidentes()" *ngIf="!isIncidentesOpened" class="drop-button">
+        <div class="close">
+            <h2>Incidentes</h2>
+            <mat-icon>keyboard_arrow_down</mat-icon>
+        </div>
+    </a>
+    
+
+    <div class="opened-area" *ngIf="isIncidentesOpened">
+        <a (click)="clickIncidentes()" class="drop-button-clicked">
+            <h2>Incidentes</h2>
+            <mat-icon>keyboard_arrow_up</mat-icon>
+        </a>
+        <div class="text-area-wrapper" contenteditable="true">
         </div>
     </div>
 </div>
