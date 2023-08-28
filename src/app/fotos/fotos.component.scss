@@ -1,0 +1,50 @@
+.title{
+    display: flex;
+    justify-content: right;
+    padding: 2rem;
+    color: #3C652F;
+}
+
+.title h1{
+    padding: 0.5rem;
+}
+
+.list{
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 4rem;
+    justify-items: center;
+    //align-items: center;
+    margin: 2rem;
+    
+}
+
+.album{
+    width: 13rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    background-color: rgba(172, 169, 187, 0.7);
+}
+
+.album:hover{
+    background-color: rgba(172, 169, 187);
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem;
+}
+
+button{
+    background-color: rgba(172, 169, 187);
+    height: 3rem;
+    width: 10rem;
+    border: none;
+    border-radius: 1rem;
+}

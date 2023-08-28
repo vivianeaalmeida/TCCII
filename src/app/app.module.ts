@@ -12,6 +12,7 @@ import { TurmasComponent } from './turmas/turmas.component';
 import { MensagensComponent } from './mensagens/mensagens.component';
 import { ConfigComponent } from './config/config.component';
 import { HomeComponent } from './home/home.component';
+import { FotosComponent } from './fotos/fotos.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
     TurmasComponent,
     MensagensComponent,
     ConfigComponent,
-    HomeComponent
+    HomeComponent,
+    FotosComponent
   ],
   imports: [
     BrowserModule,

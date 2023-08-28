@@ -6,6 +6,7 @@ import { RegistrosComponent } from './registros/registros.component';
 import { TurmasComponent } from './turmas/turmas.component';
 import { MensagensComponent } from './mensagens/mensagens.component';
 import { ConfigComponent } from './config/config.component';
+import { FotosComponent } from './fotos/fotos.component';
 
 //rotas
 //fiz 13 a 15; inseri routermodule no imports e adicionei o campo export
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'turmas', component: TurmasComponent},
   {path: 'mensagens', component: MensagensComponent},
   {path: 'configuracoes', component: ConfigComponent},
+  {path: 'fotos', component: FotosComponent},
   {path: '**', redirectTo: '/home'},
 ];
 
