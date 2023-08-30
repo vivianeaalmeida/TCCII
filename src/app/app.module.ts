@@ -18,6 +18,8 @@ import { ConfigComponent } from './config/config.component';
 import { HomeComponent } from './home/home.component';
 import { FotosComponent } from './fotos/fotos.component';
 import { CalendarioComponent } from './calendario/calendario.component';
+import { ReunioesComponent } from './reunioes/reunioes.component';
+import { EventosComponent } from './eventos/eventos.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { CalendarioComponent } from './calendario/calendario.component';
     HomeComponent,
     FotosComponent,
     CalendarioComponent,
+    ReunioesComponent,
+    EventosComponent,
   
   ],
   imports: [

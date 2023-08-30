@@ -5,6 +5,8 @@
 .overview{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem 2rem;
     flex: 3;
     
 }
@@ -41,7 +43,8 @@
 }
 
 .profile{
-    background-color: #C3E9DC;
+    background: rgb(184,224,179);
+background: linear-gradient(338deg, rgba(184,224,179,1) 58%, rgba(148,175,159,1) 100%);
     text-align: center;
     justify-content: center;
     width: 25rem;
@@ -76,7 +79,8 @@
 //HOVER
 
 .options:hover{
-    background-color: #67ba9d;
+    background: rgb(158,186,176);
+    background: radial-gradient(circle, rgba(158,186,176,1) 0%, rgba(103,186,157,1) 100%);
 }
 
 .notifications:hover{

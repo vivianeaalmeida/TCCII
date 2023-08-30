@@ -18,8 +18,8 @@
 .close{
     display: flex;
     justify-content: space-between;
-    width: 40rem;
-    background-color: rgba(60, 101, 47, 0.5);
+    width: 50rem;
+    background-color: #94AF9F;
     //margin?
     padding: 0.5rem;
     border-radius: 1rem;
@@ -32,8 +32,10 @@
 .drop-button-clicked{
     display: flex;
     justify-content: space-between;
-    width: 40rem;
-    background-color: rgba(60, 101, 47, 0.8);
+    width: 50rem;
+    background: rgb(187,214,184);
+    background: radial-gradient(circle, rgba(187,214,184,1) 0%, rgba(135,204,159,1) 100%);
+    
     //margin: 2rem;
     padding: 0.5rem;
     border-radius: 1rem 1rem 0 0;
@@ -50,7 +52,7 @@
 }
 
 .text-area-wrapper{
-    background-color: lightgray;
+    background-color: #ffffff;
     border-radius: 0 0 1rem 1rem;
     width: 100%;
     padding: 1rem 0;

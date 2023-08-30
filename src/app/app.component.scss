@@ -1,7 +1,13 @@
+*{
+    background-color: #FFFFFF;
+}
+
+
 .main-page{
     display: flex;
     height: calc(100vh - 8rem);
     padding: 4rem;  
+    background-color: #FFFFFF;
 
 }
 
@@ -12,5 +18,6 @@
 .ficticio{
     flex: 3;
     height: 100%;
-    background-color: #E1E1E1;
+    background-color: #FFFFFF;
 }
+
