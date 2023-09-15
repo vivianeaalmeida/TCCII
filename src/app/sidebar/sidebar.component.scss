@@ -1,7 +1,7 @@
 .sidebar{
     display: flex;
     flex-direction: column;
-    background-color: #FFFFFF;
+    background-color: #e9f3ee;
     height: 100%;
     min-width: 18rem;
     
@@ -62,4 +62,5 @@ a, mat-icon{
 
 h3{
     text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
 }
