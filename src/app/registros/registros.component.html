@@ -3,114 +3,140 @@
     <img class="title-img" src="assets/prancheta.svg">
 </div>
 
-<!--sono-->
-<div class="main-list">
-    <a (click)="clickSono()" *ngIf="!isSonoOpened" class="drop-button">
-        <div class="close">
-            <img src="assets/sonoIcon.svg">
-            <h2>Sono</h2>
-            <mat-icon>keyboard_arrow_down</mat-icon>
-        </div>
-    </a>
-    
-    <div class="opened-area" *ngIf="isSonoOpened">
-        <a (click)="clickSono()" class="drop-button-clicked">
-            <img src="assets/sonoIcon.svg">
-            <h2>Sono</h2>
-            <mat-icon>keyboard_arrow_up</mat-icon>
+<div class="selection-student">
+    <mat-form-field>
+        <mat-label>Alunos</mat-label>
+        <mat-select [(ngModel)]="selectStudent" name="food">
+          <mat-option *ngFor="let student of students" [value]="student.id">
+            {{student.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      
+</div>
+
+<div class="all-registers">
+    <!--sono-->
+    <div class="main-list">
+        <a (click)="clickSono()" *ngIf="!isSonoOpened" class="drop-button">
+            <div class="close">
+                <img src="assets/sonoIcon.svg">
+                <h2>Sono</h2>
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </div>
         </a>
-        <div class="text-area-wrapper" contenteditable="true">
-           
+        
+        <div class="opened-area" *ngIf="isSonoOpened">
+            <a (click)="clickSono()" class="drop-button-clicked">
+                <img src="assets/sonoIcon.svg">
+                <h2>Sono</h2>
+                <mat-icon>keyboard_arrow_up</mat-icon>
+            </a>
+            <div class="text-area-wrapper" contenteditable="true">
+            
+            </div>
+        </div>
+    </div>
+
+    <!--alimentacao-->
+    <div class="main-list">
+        <a (click)="clickAlimentacao()" *ngIf="!isAlimentacaoOpened" class="drop-button">
+            <div class="close">
+                <img src="assets/alimentacaoIcon.svg" alt="">
+                <h2>Alimentação</h2>
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </div>
+        </a>
+        
+
+        <div class="opened-area" *ngIf="isAlimentacaoOpened">
+            <a (click)="clickAlimentacao()" class="drop-button-clicked">
+                <img src="assets/alimentacaoIcon.svg" alt="">
+                <h2>Alimentação</h2>
+                <mat-icon>keyboard_arrow_up</mat-icon>
+            </a>
+            <div class="text-area-wrapper" contenteditable="true">
+            
+            </div>
+        </div>
+    </div>
+
+    <!--atividades-->
+    <div class="main-list">
+        <a (click)="clickAtividades()" *ngIf="!isAtividadesOpened" class="drop-button">
+            <div class="close">
+                <img src="assets/atividadesIcon.svg" alt="">
+                <h2>Atividades</h2>
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </div>
+        </a>
+        
+
+        <div class="opened-area" *ngIf="isAtividadesOpened">
+            <a (click)="clickAtividades()" class="drop-button-clicked">
+                <img src="assets/atividadesIcon.svg" alt="">
+                <h2>Atividades</h2>
+                <mat-icon>keyboard_arrow_up</mat-icon>
+            </a>
+            <div class="text-area-wrapper" contenteditable="true">
+            
+            </div>
+        </div>
+    </div>
+
+    <!--saude -->
+    <div class="main-list">
+        <a (click)="clickSaude()" *ngIf="!isSaudeOpened" class="drop-button">
+            <div class="close">
+                <img src="assets/saudeIcon.svg" alt="">
+                <h2>Saúde</h2>
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </div>
+        </a>
+        
+
+        <div class="opened-area" *ngIf="isSaudeOpened">
+            <a (click)="clickSaude()" class="drop-button-clicked">
+                <img src="assets/saudeIcon.svg" alt="">
+                <h2>Saúde</h2>
+                <mat-icon>keyboard_arrow_up</mat-icon>
+            </a>
+            <div class="text-area-wrapper" contenteditable="true">
+            </div>
+        </div>
+    </div>
+
+    <!-- Incidentes -->
+    <div class="main-list">
+        <a (click)="clickIncidentes()" *ngIf="!isIncidentesOpened" class="drop-button">
+            <div class="close">
+                <img src="assets/incidentesIcon.svg" alt="">
+                <h2>Incidentes</h2>
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </div>
+        </a>
+        
+
+        <div class="opened-area" *ngIf="isIncidentesOpened">
+            <a (click)="clickIncidentes()" class="drop-button-clicked">
+                <img src="assets/incidentesIcon.svg" alt="">
+                <h2>Incidentes</h2>
+                <mat-icon>keyboard_arrow_up</mat-icon>
+            </a>
+            <div class="text-area-wrapper" contenteditable="true">
+            </div>
         </div>
     </div>
 </div>
 
-<!--alimentacao-->
-<div class="main-list">
-    <a (click)="clickAlimentacao()" *ngIf="!isAlimentacaoOpened" class="drop-button">
-        <div class="close">
-            <img src="assets/alimentacaoIcon.svg" alt="">
-            <h2>Alimentação</h2>
-            <mat-icon>keyboard_arrow_down</mat-icon>
-        </div>
-    </a>
-    
-
-    <div class="opened-area" *ngIf="isAlimentacaoOpened">
-        <a (click)="clickAlimentacao()" class="drop-button-clicked">
-            <img src="assets/alimentacaoIcon.svg" alt="">
-            <h2>Alimentação</h2>
-            <mat-icon>keyboard_arrow_up</mat-icon>
-        </a>
-        <div class="text-area-wrapper" contenteditable="true">
-           
-        </div>
-    </div>
-</div>
-
-<!--atividades-->
-<div class="main-list">
-    <a (click)="clickAtividades()" *ngIf="!isAtividadesOpened" class="drop-button">
-        <div class="close">
-            <img src="assets/atividadesIcon.svg" alt="">
-            <h2>Atividades</h2>
-            <mat-icon>keyboard_arrow_down</mat-icon>
-        </div>
-    </a>
-    
-
-    <div class="opened-area" *ngIf="isAtividadesOpened">
-        <a (click)="clickAtividades()" class="drop-button-clicked">
-            <img src="assets/atividadesIcon.svg" alt="">
-            <h2>Atividades</h2>
-            <mat-icon>keyboard_arrow_up</mat-icon>
-        </a>
-        <div class="text-area-wrapper" contenteditable="true">
-           
-        </div>
-    </div>
-</div>
-
-<!--saude -->
-<div class="main-list">
-    <a (click)="clickSaude()" *ngIf="!isSaudeOpened" class="drop-button">
-        <div class="close">
-            <img src="assets/saudeIcon.svg" alt="">
-            <h2>Saúde</h2>
-            <mat-icon>keyboard_arrow_down</mat-icon>
-        </div>
-    </a>
-    
-
-    <div class="opened-area" *ngIf="isSaudeOpened">
-        <a (click)="clickSaude()" class="drop-button-clicked">
-            <img src="assets/saudeIcon.svg" alt="">
-            <h2>Saúde</h2>
-            <mat-icon>keyboard_arrow_up</mat-icon>
-        </a>
-        <div class="text-area-wrapper" contenteditable="true">
-        </div>
-    </div>
-</div>
-
-<!-- Incidentes -->
-<div class="main-list">
-    <a (click)="clickIncidentes()" *ngIf="!isIncidentesOpened" class="drop-button">
-        <div class="close">
-            <img src="assets/incidentesIcon.svg" alt="">
-            <h2>Incidentes</h2>
-            <mat-icon>keyboard_arrow_down</mat-icon>
-        </div>
-    </a>
-    
-
-    <div class="opened-area" *ngIf="isIncidentesOpened">
-        <a (click)="clickIncidentes()" class="drop-button-clicked">
-            <img src="assets/incidentesIcon.svg" alt="">
-            <h2>Incidentes</h2>
-            <mat-icon>keyboard_arrow_up</mat-icon>
-        </a>
-        <div class="text-area-wrapper" contenteditable="true">
-        </div>
-    </div>
+<div class="save-button">
+    <button (click)="save()">SALVAR REGISTROS</button>
 </div>

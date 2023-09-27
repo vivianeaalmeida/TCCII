@@ -20,6 +20,16 @@ import { FotosComponent } from './fotos/fotos.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { ReunioesComponent } from './reunioes/reunioes.component';
 import { EventosComponent } from './eventos/eventos.component';
+import { FirebaseService } from 'src/services/firebaseService';
+import {MatSelectModule} from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
+
+
 
 
 @NgModule({
@@ -36,12 +46,18 @@ import { EventosComponent } from './eventos/eventos.component';
     CalendarioComponent,
     ReunioesComponent,
     EventosComponent,
-  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
+    MatSelectModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatFormFieldModule,
     RouterModule, 
     CalendarModule.forRoot({
       provide: DateAdapter,
@@ -51,7 +67,7 @@ import { EventosComponent } from './eventos/eventos.component';
   exports: [
     RouterModule
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
