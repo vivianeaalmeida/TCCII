@@ -1,12 +1,19 @@
 .title{
     display: flex;
-    justify-content: right;
+    justify-content: center;
     padding: 2rem;
     color: #3C652F;
 }
 
 .title-img{
     width: 4rem;
+}
+
+.selection-student{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
 .main-list{
@@ -63,3 +70,8 @@ img{
     width: 2rem;
 }
 
+.save-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

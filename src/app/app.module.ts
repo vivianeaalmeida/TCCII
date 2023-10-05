@@ -28,6 +28,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -46,6 +48,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     CalendarioComponent,
     ReunioesComponent,
     EventosComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatInputModule,
     MatFormFieldModule,
     RouterModule, 
+    MatDialogModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory

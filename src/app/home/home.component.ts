@@ -11,7 +11,7 @@ export class HomeComponent {
   cidade:string = '';
 
   constructor(private firebaseService: FirebaseService) {
-    this.firebaseService.getCities().then(response => console.log(response[0]['nome']))
+   
   }
 
 

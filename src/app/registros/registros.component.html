@@ -6,7 +6,7 @@
 <div class="selection-student">
     <mat-form-field>
         <mat-label>Alunos</mat-label>
-        <mat-select [(ngModel)]="selectStudent" name="food">
+        <mat-select [(ngModel)]="selectStudent" name="student" (ngModelChange)="onChangeSearch($event)">
           <mat-option *ngFor="let student of students" [value]="student.id">
             {{student.name}}
           </mat-option>
@@ -15,7 +15,7 @@
 
       <mat-form-field>
         <mat-label>Choose a date</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <input matInput [matDatepicker]="picker" [(ngModel)]="selectDate" (ngModelChange)="onChangeSearch($event)">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -40,9 +40,9 @@
                 <h2>Sono</h2>
                 <mat-icon>keyboard_arrow_up</mat-icon>
             </a>
-            <div class="text-area-wrapper" contenteditable="true">
+            <textarea [(ngModel)]="sleepValue" class="text-area-wrapper" name="sono-register" id="sono-register" cols="30" rows="4">
+            </textarea>
             
-            </div>
         </div>
     </div>
 
@@ -63,9 +63,8 @@
                 <h2>Alimentação</h2>
                 <mat-icon>keyboard_arrow_up</mat-icon>
             </a>
-            <div class="text-area-wrapper" contenteditable="true">
-            
-            </div>
+            <textarea [(ngModel)]="mealValue" class="text-area-wrapper" name="meal-register" id="meal-register" cols="30" rows="4">
+            </textarea>
         </div>
     </div>
 
@@ -86,9 +85,8 @@
                 <h2>Atividades</h2>
                 <mat-icon>keyboard_arrow_up</mat-icon>
             </a>
-            <div class="text-area-wrapper" contenteditable="true">
-            
-            </div>
+            <textarea [(ngModel)]="activitiesValue" class="text-area-wrapper" name="activities-register" id="activities-register" cols="30" rows="4">
+            </textarea>
         </div>
     </div>
 
@@ -109,8 +107,8 @@
                 <h2>Saúde</h2>
                 <mat-icon>keyboard_arrow_up</mat-icon>
             </a>
-            <div class="text-area-wrapper" contenteditable="true">
-            </div>
+            <textarea [(ngModel)]="healthValue" class="text-area-wrapper" name="health-register" id="health-register" cols="30" rows="4">
+            </textarea>
         </div>
     </div>
 
@@ -131,8 +129,8 @@
                 <h2>Incidentes</h2>
                 <mat-icon>keyboard_arrow_up</mat-icon>
             </a>
-            <div class="text-area-wrapper" contenteditable="true">
-            </div>
+            <textarea [(ngModel)]="incidentsValue" class="text-area-wrapper" name="incidents-register" id="incidents-register" cols="30" rows="4">
+            </textarea>
         </div>
     </div>
 </div>
