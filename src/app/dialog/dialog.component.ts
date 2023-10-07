@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Component, Input, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog',
@@ -7,7 +7,12 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
-  constructor(private dialogRef: MatDialogRef<DialogComponent>){}
+
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: { message: string, type: 'SUCCESS'|'ERROR' }
+  ) {}
 
   closeDialog(): void {
     this.dialogRef.close();

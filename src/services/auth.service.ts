@@ -14,7 +14,9 @@ export class AuthService  {
   }
 
   logout() {
-    return this.afAuth.signOut();
+    return this.afAuth.signOut().then(() => {
+      this.router.navigate(['/login'])
+    });
   }
 
   isLoggedIn() {

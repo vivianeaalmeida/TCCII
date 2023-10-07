@@ -127,10 +127,7 @@ export class RegistrosComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '250px', 
-    });
-  
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('O popup foi fechado');
+      data: {message : 'Registro salvo com sucesso', type: 'SUCCESS'}
     });
   }
 
