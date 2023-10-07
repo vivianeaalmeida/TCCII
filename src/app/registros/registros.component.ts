@@ -1,9 +1,9 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Register } from '../interfaces/register';
+import { Register } from '../../interfaces/register';
 import { FirebaseService } from 'src/services/firebaseService';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
-import { Student } from '../interfaces/student';
+import { Student } from '../../interfaces/student';
 
 
 @Component({

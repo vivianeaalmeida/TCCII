@@ -31,8 +31,16 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
+import { AngularFireModule } from '@angular/fire/compat';
 
-
+const firebaseConfig = {
+  apiKey: "AIzaSyCMUPHRH1_MS8U-mVNJaCS6AXnGYsvH4S4",
+  authDomain: "pequenospassos-22.firebaseapp.com",
+  projectId: "pequenospassos-22",
+  storageBucket: "pequenospassos-22.appspot.com",
+  messagingSenderId: "420818323110",
+  appId: "1:420818323110:web:9986a34a64813ddcc05667"
+};
 
 
 @NgModule({
@@ -68,7 +76,8 @@ import { LoginComponent } from './login/login.component';
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
-    })
+    }),
+    AngularFireModule.initializeApp(firebaseConfig),
   ],
   exports: [
     RouterModule

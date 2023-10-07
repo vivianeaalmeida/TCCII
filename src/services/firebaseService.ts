@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { id } from 'date-fns/locale';
 import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 import { getFirestore, collection, getDocs, addDoc, setDoc, doc, Firestore, where, query } from 'firebase/firestore/lite';
-import { Register } from 'src/app/interfaces/register';
-import { Student } from 'src/app/interfaces/student';
+import { Register } from 'src/interfaces/register';
+import { Student } from 'src/interfaces/student';
 // Follow this pattern to import other Firebase services
 // import { } from 'firebase/<service>';
 

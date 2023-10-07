@@ -20,4 +20,25 @@
     border-radius: 10px;
     border: 3px solid #DBE4C6;
 }
+
+.main-page{
+    display: flex;
+    height: calc(100vh - 8rem);
+    padding: 4rem;  
+    background-color: #e9f3ee;
+
+}
+
+.sidebar{
+    flex: 1;
+}
+
+.ficticio{
+    flex: 3;
+    height: 100%;
+    background-color: #e9f3ee;
+
+}
+
+
   

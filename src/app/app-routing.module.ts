@@ -8,19 +8,26 @@ import { MensagensComponent } from './mensagens/mensagens.component';
 import { ConfigComponent } from './config/config.component';
 import { FotosComponent } from './fotos/fotos.component';
 import { CalendarioComponent } from './calendario/calendario.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from 'src/services/auth.service';
 
 //rotas
 //fiz 13 a ...; inseri routermodule no imports e adicionei o campo export em ngModule
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: 'content-page', component: ContentPageComponent},
-  {path: 'registros', component: RegistrosComponent},
-  {path: 'turmas', component: TurmasComponent},
-  {path: 'mensagens', component: MensagensComponent},
-  {path: 'configuracoes', component: ConfigComponent},
-  {path: 'fotos', component: FotosComponent},
-  {path: 'calendario', component: CalendarioComponent},
-  {path: '**', redirectTo: '/home'},
+  {path: 'login', component: LoginComponent},
+  {path: '' , component: ContentPageComponent, canActivate: [AuthService],
+    children: [
+      {path: 'home', component: HomeComponent , canActivate: [AuthService]},
+      {path: 'content-page', component: ContentPageComponent , canActivate: [AuthService]},
+      {path: 'registros', component: RegistrosComponent , canActivate: [AuthService]},
+      {path: 'turmas', component: TurmasComponent , canActivate: [AuthService]},
+      {path: 'mensagens', component: MensagensComponent , canActivate: [AuthService]},
+      {path: 'configuracoes', component: ConfigComponent , canActivate: [AuthService]},
+      {path: 'fotos', component: FotosComponent , canActivate: [AuthService]},
+      {path: 'calendario', component: CalendarioComponent , canActivate: [AuthService]},
+    ]
+  },
+  {path: '**', redirectTo: '/login'},
 ];
 
 @NgModule({
