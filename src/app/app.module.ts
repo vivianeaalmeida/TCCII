@@ -30,6 +30,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -48,7 +49,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
     CalendarioComponent,
     ReunioesComponent,
     EventosComponent,
-    DialogComponent
+    DialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

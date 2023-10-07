@@ -25,6 +25,8 @@ export class FirebaseService {
     app = initializeApp(this.firebaseConfig);
     db: Firestore = getFirestore(this.app);
 
+    //STUDENTS
+
     // Get a list of students from database
     public async getStudents() {
         const studentsCollection = collection(this.db, 'students');
@@ -39,6 +41,8 @@ export class FirebaseService {
         });
         return studentsList;
     }
+
+    //REGISTERS
 
     public async getRegistersByStudentAndDate(idStudent: string, occurenceDate: string): Promise<Register | undefined>{
         const registersCollection = collection(this.db, 'register');
@@ -55,6 +59,7 @@ export class FirebaseService {
                 idStudent:  doc.data()['idStudent'],
                 sleep: doc.data()['sleep'],
                 activities: doc.data()['activities'],
+                meal: doc.data()['meal'],
                 health: doc.data()['health'],
                 incidents: doc.data()['incidents'],
                 occurenceDate: doc.data()['occurenceDate']
@@ -71,18 +76,18 @@ export class FirebaseService {
             await addDoc(registerCol, register);
             return true; // Retorna true se o registro foi adicionado com sucesso
         } catch (error) {
-            console.error('Erro ao adicionar cidade:', error);
+            console.error('Erro ao adicionar registro:', error);
             return false; // Retorna false se ocorrer um erro
         }
     }
 
-    public async editCity(cityId: string, newData: any) {
+    public async editRegister(registerId: string, newData: Register) {
         try {
-            const cityRef = doc(this.db, 'cities', cityId);
-            await setDoc(cityRef, newData); // Use setDoc para substituir completamente o documento ou use updateDoc para fazer uma atualização parcial
+            const registerRef = doc(this.db, 'register', registerId);
+            await setDoc(registerRef, newData); 
             return true; // Retorna true se a edição foi bem-sucedida
         } catch (error) {
-            console.error('Erro ao editar cidade:', error);
+            console.error('Erro ao editar registro:', error);
             return false; // Retorna false se ocorrer um erro
         }
     }

@@ -13,6 +13,7 @@ import { Student } from '../interfaces/student';
 })
 export class RegistrosComponent implements OnInit {
   
+  idValue?: string = '';
   selectStudent: string = '';
   selectDate: Date = new Date;
   sleepValue: string = '';
@@ -47,19 +48,33 @@ export class RegistrosComponent implements OnInit {
       this.firebaseService.getRegistersByStudentAndDate(this.selectStudent, 
       this.convertDateToString(this.selectDate)).then(response => {
         if(response){
+          console.log(response)
+          this.idValue = response.id;
           this.sleepValue = response.sleep;
           this.mealValue = response.meal;
           this.activitiesValue = response.activities;
           this.healthValue = response.health;
           this.incidentsValue = response.incidents;
+
+          this.isSonoOpened = true;
+          this.isAlimentacaoOpened = true;
+          this.isAtividadesOpened = true;
+          this.isSaudeOpened = true;
+          this.isIncidentesOpened = true;
+        
         } else {
           this.sleepValue = '';
           this.mealValue = '';
           this.activitiesValue = '';
           this.healthValue = '';
           this.incidentsValue = '';
+
+          this.isSonoOpened = false;
+          this.isAlimentacaoOpened = false;
+          this.isAtividadesOpened = false;
+          this.isSaudeOpened = false;
+          this.isIncidentesOpened = false;
         }
-         
       });
     }
   }
@@ -88,14 +103,7 @@ export class RegistrosComponent implements OnInit {
 
   //salvar registros
   save(){
-    console.log(this.selectStudent)
-    console.log(this.selectDate)
-    console.log(this.sleepValue)
-    console.log(this.mealValue)
-    console.log(this.activitiesValue)
-    console.log(this.healthValue)
-    console.log(this.incidentsValue)   
-
+  
     let register: Register = {
       idStudent: this.selectStudent,
       sleep: this.sleepValue,
@@ -105,8 +113,14 @@ export class RegistrosComponent implements OnInit {
       incidents: this.incidentsValue,
       occurenceDate: this.convertDateToString(this.selectDate)
     }
+    console.log(register)
 
-    this.firebaseService.saveRegister(register);
+    if(this.idValue){
+      console.log(this.idValue)
+      this.firebaseService.editRegister(this.idValue, register);
+    } else {
+      this.firebaseService.saveRegister(register);
+    }
     this.openDialog();
   }
 

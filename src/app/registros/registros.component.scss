@@ -74,4 +74,14 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
+    
+}
+
+.save-button button{
+    background-color: #b3dba7;
+    border-radius: 1rem;
+    width: 10rem;
+    height: 3rem;
+    border: #b3dba7;
+    cursor: pointer;
 }
