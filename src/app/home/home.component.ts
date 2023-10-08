@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/services/auth.service';
 import {FirebaseService} from 'src/services/firebaseService'
 
 @Component({
@@ -6,18 +7,29 @@ import {FirebaseService} from 'src/services/firebaseService'
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
-  cidade:string = '';
+  name:string = '';
+  role: string = '';
 
-  constructor(private firebaseService: FirebaseService) {
+  constructor(private authService: AuthService) {
    
+  }
+  ngOnInit(): void {
+    let promiseUser = this.authService.getUserData();
+    promiseUser.then(user => {
+      this.name = user.name;
+      this.role = user.role;
+    })
+    
   }
 
 
   getAlunos(){
    
   }
+
+  
 
   
 }

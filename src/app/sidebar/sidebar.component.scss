@@ -45,6 +45,9 @@ a, mat-icon{
 
 .logout{
     flex: 1;
+    border: none;
+    cursor: pointer;
+    color: #5c8a7a;
 }
 
 .geral{
@@ -55,7 +58,7 @@ a, mat-icon{
 }
 
 .geral img{
-    width: 15rem;
+    width: 17rem;
 }
 
 h3{

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { id } from 'date-fns/locale';
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore, collection, getDocs, addDoc, setDoc, doc, Firestore, where, query } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs, addDoc, setDoc, doc, Firestore, where, query, getDoc } from 'firebase/firestore/lite';
 import { Register } from 'src/interfaces/register';
 import { Student } from 'src/interfaces/student';
+import { User } from 'src/interfaces/user';
 // Follow this pattern to import other Firebase services
 // import { } from 'firebase/<service>';
 
@@ -92,6 +92,40 @@ export class FirebaseService {
             return false; // Retorna false se ocorrer um erro
         }
     }
+
+    public async getUserData(uid: string) {
+        const userReference = doc(this.db, 'user', uid);
+        const userSnapshot = await getDoc(userReference);
+
+        if(userSnapshot.exists()){
+            const user: User = {
+                uid: userSnapshot.id,
+                name: userSnapshot.data()['name'],
+                role: userSnapshot.data()['role']
+            }
+            return user;
+        } else {
+            throw new Error('User not found');
+        }
+
+        
+      }
 }
 
 
+/*
+public async getStudents() {
+        const studentsCollection = collection(this.db, 'students');
+        const studentSnapshot = await getDocs(studentsCollection);
+        const studentsList: Student[] = studentSnapshot.docs.map(doc => {
+            const studentData = {
+                id: doc.id,
+                idResponsiblePerson: doc.data()['idResponsiblePerson'],
+                name: doc.data()['name'] 
+            } as Student;
+            return studentData;  //map e depois retorno aluno por aluno para studentList
+        });
+        return studentsList;
+
+
+*/

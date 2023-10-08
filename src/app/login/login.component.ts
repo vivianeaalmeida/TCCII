@@ -22,9 +22,9 @@ export class LoginComponent {
         console.log('Usuário autenticado com sucesso!');
       }).catch(erro => {
         this.openDialog();
-        console.error('Erro:', erro); // Será executado se a Promise for rejeitada
+        console.error('Erro:', erro); // Será executado se a Promise for rejeitada. Login errado, conexão invalida etc. != status 200. 
       });
-      // Redirecionar para a página após o login
+      // caso dê erro de execução do meu código. Ex: null pointer
     } catch (error) {
       this.openDialog();
       console.error(error);
@@ -40,3 +40,8 @@ export class LoginComponent {
   }
 
 }
+
+
+/*popup-success popup-error
+[ngClass]="step == 'step1' ? 'my_class1' : 'my_class2'"
+*/

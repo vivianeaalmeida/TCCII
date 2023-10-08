@@ -101,6 +101,12 @@ export class RegistrosComponent implements OnInit {
     this.isIncidentesOpened = !this.isIncidentesOpened;
   } 
 
+  /*
+  showButton
+
+
+  */
+
   //salvar registros
   save(){
   

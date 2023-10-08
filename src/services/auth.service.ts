@@ -1,20 +1,27 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth'; 
 import { Router } from '@angular/router';
 import { Observable, map } from 'rxjs';
+import { FirebaseService } from './firebaseService';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService  {
-
-  constructor(private afAuth: AngularFireAuth, public router: Router) {}
+  
+  constructor(private afAuth: AngularFireAuth, public router: Router, private firebaseService: FirebaseService) {}
 
   login(email: string, password: string) {
-    return this.afAuth.signInWithEmailAndPassword(email, password);
+
+    return this.afAuth.signInWithEmailAndPassword(email, password).then(userCredential => {
+      if(userCredential.user){
+        this.loadUserData(userCredential.user.uid)
+      }
+    });
   }
 
   logout() {
     return this.afAuth.signOut().then(() => {
+      this.clearUserData();
       this.router.navigate(['/login'])
     });
   }
@@ -23,9 +30,22 @@ export class AuthService  {
     return this.afAuth.authState;
   }
 
+  async getUserData() {
+    const userData = localStorage.getItem('userData');
+    if(userData){
+      await this.loadUserData;
+    }
+    return userData ? JSON.parse(userData) : null;
+  }
+
+  
+
   canActivate(): Observable<boolean> {
     return this.afAuth.authState.pipe(
       map((user: any) => {
+        console.log(user.displayName)
+        console.log(user.email)
+        console.log(user.uid)
         if (user) {
           return true;
         } else {
@@ -35,4 +55,16 @@ export class AuthService  {
       })
     );
   }
+
+  private loadUserData(uid: string) {
+    return this.firebaseService.getUserData(uid).then((userData: any) => {
+      localStorage.setItem('userData', JSON.stringify(userData));
+    });
+  }
+
+  private clearUserData() {
+    localStorage.removeItem('userData'); 
+  }
+
+  
 }

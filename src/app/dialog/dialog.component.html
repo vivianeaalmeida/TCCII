@@ -1,4 +1,4 @@
-<div class="popup">
+<div [ngClass] = "data.type === 'SUCCESS' ? 'popup-success' : 'popup-error' ">
     <h1>{{data.type === 'SUCCESS' ? 'Sucesso' : 'Erro'}}</h1>
     <p>{{data.message}}</p>
     <button mat-button (click)="closeDialog()">OK</button>

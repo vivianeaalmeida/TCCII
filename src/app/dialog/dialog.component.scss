@@ -5,12 +5,28 @@
     color: #3C652F;
 }
 
-.popup{
+.popup-success{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 2rem;
     margin: 2rem;
+    background-color: #97d88394;
+    border-radius: 20px;
 }
 
+.popup-error{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 2rem;
+    background-color: #d8948394;
+    border-radius: 20px;
+
+}
+
+
+/*popup-sucess popup-error*/
