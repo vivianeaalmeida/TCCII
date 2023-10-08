@@ -4,6 +4,7 @@ import { FirebaseService } from 'src/services/firebaseService';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { Student } from '../../interfaces/student';
+import { AuthService } from 'src/services/auth.service';
 
 
 @Component({
@@ -35,7 +36,7 @@ export class RegistrosComponent implements OnInit {
   isIncidentesOpened:boolean = false;
 
   
-  constructor(private firebaseService: FirebaseService, public dialog: MatDialog) {
+  constructor(private firebaseService: FirebaseService, public dialog: MatDialog, private authService: AuthService) {
     
   }
   ngOnInit(): void {
@@ -102,38 +103,43 @@ export class RegistrosComponent implements OnInit {
   } 
 
   /*
-  showButton
+  showButton */
+  showButton(){
+    return this.authService.getUserData().role === 'PROFESSOR';
+  }
 
-
-  */
+ 
 
   //salvar registros
   save(){
-  
-    let register: Register = {
-      idStudent: this.selectStudent,
-      sleep: this.sleepValue,
-      meal: this.mealValue,
-      activities: this.activitiesValue,
-      health: this.healthValue,
-      incidents: this.incidentsValue,
-      occurenceDate: this.convertDateToString(this.selectDate)
-    }
-    console.log(register)
 
-    if(this.idValue){
-      console.log(this.idValue)
-      this.firebaseService.editRegister(this.idValue, register);
+    if(this.selectStudent && this.selectDate){
+      let register: Register = {
+        idStudent: this.selectStudent,
+        sleep: this.sleepValue,
+        meal: this.mealValue,
+        activities: this.activitiesValue,
+        health: this.healthValue,
+        incidents: this.incidentsValue,
+        occurenceDate: this.convertDateToString(this.selectDate)
+      }
+  
+      if(this.idValue){
+        console.log(this.idValue)
+        this.firebaseService.editRegister(this.idValue, register);
+      } else {
+        this.firebaseService.saveRegister(register);
+      }
+      this.openDialog('Registro salvo com sucesso', 'SUCCESS');
     } else {
-      this.firebaseService.saveRegister(register);
+      this.openDialog('Erro ao salvar registro. Selecione aluno e data.', 'ERROR')
     }
-    this.openDialog();
   }
 
-  openDialog(): void {
+  openDialog(message: string, type: string): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '250px', 
-      data: {message : 'Registro salvo com sucesso', type: 'SUCCESS'}
+      data: {message, type}
     });
   }
 

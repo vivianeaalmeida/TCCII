@@ -10,11 +10,11 @@ export class AuthService  {
   
   constructor(private afAuth: AngularFireAuth, public router: Router, private firebaseService: FirebaseService) {}
 
-  login(email: string, password: string) {
+  async login(email: string, password: string) {
 
-    return this.afAuth.signInWithEmailAndPassword(email, password).then(userCredential => {
+    return this.afAuth.signInWithEmailAndPassword(email, password).then(async userCredential => {
       if(userCredential.user){
-        this.loadUserData(userCredential.user.uid)
+        await this.loadUserData(userCredential.user.uid)
       }
     });
   }
@@ -30,11 +30,9 @@ export class AuthService  {
     return this.afAuth.authState;
   }
 
-  async getUserData() {
+  getUserData() {
     const userData = localStorage.getItem('userData');
-    if(userData){
-      await this.loadUserData;
-    }
+  
     return userData ? JSON.parse(userData) : null;
   }
 

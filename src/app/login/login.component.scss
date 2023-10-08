@@ -1,39 +1,93 @@
+*, body{
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+
 .login-page{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
-    padding: 1rem;
+    
     
 }
 
-.login-page h2{
-    font-size: 4rem;
-    font-family: 'Oswald', sans-serif;
-    color: #5c8a7a;
+.login-right{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.inputs, label, input{
-    margin: 1rem;
+.login-left{
+    background-image: url('/assets/pp_loginpage.svg');
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #5c8a7a; //img n preencheu a div
+    
+}
+
+.login-page h3{
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    color: #5c8a7a;
+    margin-bottom: 2rem;
+}
+
+.form{
+    background-color: #7eb4a193;
+    color: bisque;
+    padding: 8rem 2rem;
+}
+
+
+
+ label, form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0.5rem;
     font-size: 2rem;
     border: none;
     border-radius: 20px;
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    color: #5c8a7a;
+    color: #53907b;
+    overflow: hidden;
 }
 
+.inputs, input{
+    display: flex;
+    border: none;
+    border-radius: 20px;
+    padding: 1rem;
+    margin: 0 2rem;
+
+}
+
+
 button{
-    margin: 1rem;
+    margin-top: 3rem;
     width: 10rem;
     height: 2rem;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
 }
 
 button:hover{
     background-color: #5c8a7a;
+    transform: scale(1.1);
+    transition: all 0.5s;
 }
