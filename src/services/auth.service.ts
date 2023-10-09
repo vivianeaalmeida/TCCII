@@ -41,9 +41,9 @@ export class AuthService  {
   canActivate(): Observable<boolean> {
     return this.afAuth.authState.pipe(
       map((user: any) => {
-        console.log(user.displayName)
-        console.log(user.email)
-        console.log(user.uid)
+        //console.log(user.displayName)
+        //console.log(user.email)
+        //console.log(user.uid)
         if (user) {
           return true;
         } else {

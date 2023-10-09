@@ -8,20 +8,22 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    
-    
+    align-items: center;    
+    background-color: #88d8bc;
+    height: 100vh;
 }
 
 .login-right{
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    
 }
 
+
+
 .login-left{
-    background-image: url('/assets/pp_loginpage.svg');
+    background-image: url('/assets/login_opt2.svg');
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -31,26 +33,47 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: #5c8a7a; //img n preencheu a div
+    background-color: #ffffff; //img n preencheu a div
     
 }
 
 .login-page h3{
     font-size: 3rem;
     font-family: 'Oswald', sans-serif;
-    color: #5c8a7a;
-    margin-bottom: 2rem;
+    color: #30473f;
+    margin-bottom: 1rem;
+    
 }
 
+.title-login{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.label {
+    font-size: 1rem; /* Ajuste o tamanho do rótulo conforme necessário */
+    margin-bottom: 0.5rem; /* Adicione algum espaçamento entre o rótulo e o input */
+  }
+
 .form{
-    background-color: #7eb4a193;
+    background-color:  #dde6e3e7;
     color: bisque;
     padding: 8rem 2rem;
 }
 
 
+.p-account{
+    font-size: small;
+    color: black;
+    display: flex;
+    align-items: flex-start;
+    
 
- label, form{
+}
+
+form{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,29 +81,35 @@
     margin: 0.5rem;
     font-size: 2rem;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    color: #53907b;
     overflow: hidden;
 }
 
-.inputs, input{
+.inputs{
     display: flex;
-    border: none;
-    border-radius: 20px;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 1rem;
     margin: 0 2rem;
-
+    color: black;
 }
 
+.text-space{
+    border: none;
+    width: 20rem;
+    height: 3rem;
+    text-align: center;
+    border-radius: 5px;
+}
 
 button{
     margin-top: 3rem;
-    width: 10rem;
-    height: 2rem;
+    width: 20rem;
+    height: 4rem;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     cursor: pointer;
     font-family: 'Oswald', sans-serif;
     font-size: 1rem;
