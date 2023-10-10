@@ -9,7 +9,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;    
-    background-color: #88d8bc;
+    background: rgb(136,216,188);
+    background: radial-gradient(circle, rgba(136,216,188,1) 7%, rgba(143,188,139,1) 100%);
     height: 100vh;
 }
 
@@ -23,7 +24,7 @@
 
 
 .login-left{
-    background-image: url('/assets/login_opt2.svg');
+    background-image: url('/assets/login_logo.svg');
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -33,7 +34,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: #ffffff; //img n preencheu a div
+    background-color: #F2ECD8; //img n preencheu a div
     
 }
 
